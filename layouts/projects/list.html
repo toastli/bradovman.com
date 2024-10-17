@@ -1,0 +1,23 @@
+{{ define "main" }}
+<a href="/" class="back-link"><span>←</span> Back</a>
+
+<div class="projects-container">
+    <header class="projects-header">
+        <h1 class="projects-title">{{ .Title }}</h1>
+    </header>
+
+    <div class="projects-grid">
+        {{ range .Params.projects }}
+        <article class="project-card" style="--hover-color: {{ .hoverColor }}">
+            <div class="card-content">
+                <h2 class="project-title">{{ .title }}</h2>
+                <p class="project-description">{{ .description }}</p>
+                <a href="{{ .link }}" class="project-link"
+                    >View Project <span>→</span></a
+                >
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
